@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FS-Restaurant-Admin-panel-dishes-page</title>
+    <link rel="icon" href="../../images/cutlery.png">
+    <!-- css link  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+
+</head>
+
+<body>
+
+    <div>
+
+        <!-- for header part -->
+        <header>
+            <div class="logo">
+                <img src="../../images/icons/icons8-menu-50.png" class="icon menuicon" alt="menu-icon">
+                <div class="logoname">FS-Restaurant...</div>
+            </div>
+            <div class="message">
+                <div class="circle"></div>
+                <img src="../../images/icons/icons8-bell-50.png" class="icon" alt="">
+                <div class="dp">
+                    <img src="../../images/icons/icons8-administrator-male-50.png" class="dpicon" alt="dp">
+                </div>
+            </div>
+
+        </header>
+
+        <div class="main-container">
+            <div class="nav-container">
+                <nav class="nav">
+                    <div class="nav-upper-options">
+                        <div class="nav-option option1">
+                            <h3>
+                                <a href="../dashboard/index.html">
+                                    <img src="../../images/icons/icons8-dashboard-layout-50.png" class="nav-img"
+                                        alt="dashboard">
+                                    Dashboard
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="nav-option option2">
+                            <h3>
+                                <a href="../Category/index.html">
+                                    <img src="../../images/icons/icons8-restaurant-menu-50.png" class="nav-img"
+                                        alt="report">
+                                    Category
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="nav-option option3">
+                            <h3>
+                                <a href="../dishes/index.html" id="Dishes">
+                                    <img src="../../images/icons/icons8-street-food-50.png" class="nav-img"
+                                        alt="articles">
+                                    Dishes
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="nav-option option4">
+                            <h3>
+                                <a href="" id="order">
+                                    <img src="../../images/icons/icons8-order-50.png" class="nav-img" alt="articles">
+                                    Orders
+                                </a>
+                            </h3>
+                        </div>
+
+
+                        <div class="nav-option option5">
+                            <h3>
+                                <a href="" id="Profile">
+                                    <img src="../../images/icons/icons8-edit-account-50.png" class="nav-img" alt="blog">
+                                    Profile
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="nav-option option6">
+                            <h3>
+                                <a href="" id="Settings">
+                                    <img src="../../images/icons/icons8-setting-50.png" class="nav-img" alt="settings">
+                                    Settings
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="nav-option logout">
+                            <h3>
+                                <a id="Logout">
+                                    <img src="../../images/icons/icons8-logout-50.png" class="nav-img" alt="logout">
+                                    Logout
+                                </a>
+                            </h3>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+            
+            <div class="main">
+                <div class="add-Category">
+                    <h1 class="Category-heading">Add Dishes</h1>
+                    <img class="add-button"  src="../../images/icons/icons8-add-50.png" alt="" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                </div>
+
+                <div class="table" >
+					<div class="table-head">
+						<h1 class="recent-order">Dishes</h1>
+						<button class="view-all-orders">View All</button>
+					</div>
+	
+					<div class="table-body">
+						<div class="table-heading">
+							<h3 class="tr">No</h3>
+							<h3 class="tr tr-h">Category <br> Name</h3>
+							<h3 class="tr tr-h">Dish Name</h3>
+							<h3 class="tr tr-h">Dish Price</h3>
+							<h3 class="tr tr-h">Dish Image</h3>
+							<h3 class="tr tr-h">Action</h3>
+						</div>
+	
+						<div class="table-data" id="dishes_data">
+							<!-- <div class="item1">
+								<h3 class="tr-td">1</h3>
+								<h3 class="tr-td">Article 65</h3>
+								<h3 class="tr-td">220</h3>
+								<h3 class="tr-td table-status">Published</h3>
+							</div> -->
+						
+						</div>
+					</div>
+				</div>
+
+
+            </div>
+        </div>
+
+        <div class="modal" id="exampleModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title Category-title">Add Dish</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select name="" id="all_category_data"  class="form-control" >
+                            <option >
+                                Select Category
+                            </option>
+                        </select>
+                        <input type="text" class="form-control mt-3" placeholder="Enter Dish Name" id="Dish_name">
+                        <input type="number" class="form-control mt-3" placeholder="Enter Dish Price" id="Dish_price">
+                        <!-- <div id="dish_edit_img">
+                            <img src="" id="dish_edit_image" style="display: none;">
+                        </div> -->
+                        <input type="file"  class="form-control mt-3" id="Dish-image">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary madal-close" data-bs-dismiss="modal"
+                            id="modal1">Close</button>
+                        <button type="button" class="btn btn-primary Save-changes" onclick="addDish()" id="Add_btn"
+                            disabled>Add Dish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <!-- Edit Dish Modal -->
+
+        <div class="modal" id="exampleModaledit" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title Category-title">Edit Dish</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select name="" id="edit_cat_option"   class="form-control" onchange="setCategoryFunc(this)" >
+                            <option >
+                            
+                            </option>
+                        </select>
+                        <input type="text" class="form-control mt-3" placeholder="Enter Dish Name" id="dish_name_edit">
+                        <input type="number" class="form-control mt-3" placeholder="Enter Dish Price" id="dish_price_edit">
+                        <div id="dish_edit_img">
+                            <img src="" id="dish_edit_image" style="display: none;">
+                        </div>
+                        <input type="file"  class="form-control mt-3" id="Dish-image">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary madal-close" data-bs-dismiss="modal"
+                            id="modal1">Close</button>
+                        <button type="button" class="btn btn-primary Save-changes" onclick="editSave()" id="Add_btn"
+                        >Save-changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+  <!-- <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Dish</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <select class="form-control" id="edit_cat_option" >
+            <option>Select Category</option>
+          </select>
+          <br />
+          <input type="text" class="form-control" placeholder="Enter Dish Name" id="dish_name_edit" />
+          <br />
+          <input type="text" class="form-control" placeholder="Enter Price" id="dish_price_edit" />
+          <br />
+
+          <img src="" id="dish_image" style="display: none;" />
+          <input type="file" class="mt-2 form-control" placeholder="Enter Dish Picture" id="image" />
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="model1">Close</button>
+          <button type="button" class="btn btn-primary" onclick="AddDish()" id="btn" disabled>Add Dish</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+   
+    </div>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="../../configuration/app.js"></script>
+
+
+    <script src="../dashboard/app.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
